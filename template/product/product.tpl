@@ -382,6 +382,7 @@
               <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>"
                       onclick="console.log('add_to_wishlist event', $product['product_id']);globService.product.addToWishlist($product['product_id']);wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i>
               </button>
+
               <button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
             </div>
           </div>
@@ -436,7 +437,7 @@ $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 });
 //--></script>
 <script type="text/javascript"><!--
-$('#button-cart').on('click', function() {
+$('#button-cart').on('onselect', function() { // TODO restore to onclick (select only for test)
 	$.ajax({
 		url: 'index.php?route=checkout/cart/add',
 		type: 'post',
