@@ -291,9 +291,17 @@
             <div class="form-group">
               <label class="control-label" for="input-quantity"><?php echo $entry_qty; ?></label>
               <input type="text" name="quantity" value="<?php echo $minimum; ?>" size="2" id="input-quantity" class="form-control" />
-              <input type="hidden" name="product_id" value="<?php echo $product_id; ?>" />
+              <input type="hidden" id="input-product-id" name="product_id" value="<?php echo $product_id; ?>" />
               <br />
-              <button type="button" id="button-cart" onload="alert('trash');" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary btn-lg btn-block"><?php echo $button_cart; ?></button>
+
+
+              <!--globService.product.addToCart("prod20016", 2); TODO addToCart event-->
+              <button type="button" id="button-cart"
+                      onclick="console.log('addToCart event');globService.product.addToCart($('input-product-id').val(), $('input-quantity').val());"
+                      data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary btn-lg btn-block"><?php echo $button_cart; ?>
+              </button>
+
+
             </div>
             <?php if ($minimum > 1) { ?>
             <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $text_minimum; ?></div>
@@ -362,8 +370,18 @@
               <?php } ?>
             </div>
             <div class="button-group">
-              <button type="button" onclick="alert('oops');console.log('press');cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');"><span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span> <i class="fa fa-shopping-cart"></i></button>
-              <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button>
+
+
+              <!--globService.product.addToCart("prod20016", 2); TODO addToCart event-->
+              <button type="button"
+                      onclick="console.log('addToCart event', $product['product_id']);globService.product.addToCart($product['product_id'], 1);cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
+                <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span> <i class="fa fa-shopping-cart"></i>
+              </button>
+
+
+              <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>"
+                      onclick="console.log('add_to_wishlist event', $product['product_id']);globService.product.addToWishlist($product['product_id']);wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i>
+              </button>
               <button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
             </div>
           </div>
@@ -394,7 +412,8 @@
     <?php echo $column_right; ?></div>
 </div>
 <script type="text/javascript">
-  globService.init('glob-init');
+  globService.init('glob-init', 'product_detail', {});
+  globService.product.view("prod20016");
 </script>
 <script type="text/javascript"><!--
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
