@@ -1,4 +1,8 @@
+
 <?php echo $header; ?>
+<script>
+    var globService = globService;
+</script>
 <div class="container" id="glob-init">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -300,6 +304,9 @@
                       onclick="globService.product.addToCart($('#input-product-id').val(), $('#input-quantity').val());console.log('addToCart event');"
                       data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary btn-lg btn-block"><?php echo $button_cart; ?>
               </button>
+                <script>
+
+                </script>
 
 
             </div>
