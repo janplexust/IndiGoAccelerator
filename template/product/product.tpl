@@ -297,7 +297,7 @@
 
               <!--globService.product.addToCart("prod20016", 2); TODO addToCart event-->
               <button type="button" id="button-cart"
-                      onclick="console.log('addToCart event');globService.product.addToCart($('input-product-id').val(), $('input-quantity').val());"
+                      onclick="console.log('addToCart event');globService.product.addToCart($('#input-product-id').val(), $('#input-quantity').val());"
                       data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary btn-lg btn-block"><?php echo $button_cart; ?>
               </button>
 
@@ -380,7 +380,7 @@
 
 
               <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>"
-                      onclick="console.log('add_to_wishlist event', $product['product_id']);globService.product.addToWishlist($product['product_id']);wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i>
+                      onclick="console.log('add_to_wishlist event', '<?php echo $product['product_id'] ?>');globService.product.addToWishlist('<?php echo $product['product_id'] ?>');wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i>
               </button>
 
               <button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
