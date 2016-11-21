@@ -297,7 +297,7 @@
 
               <!--globService.product.addToCart("prod20016", 2); TODO addToCart event-->
               <button type="button" id="button-cart"
-                      onclick="console.log('addToCart event');globService.product.addToCart($('#input-product-id').val(), $('#input-quantity').val());"
+                      onclick="globService.product.addToCart($('#input-product-id').val(), $('#input-quantity').val());console.log('addToCart event');"
                       data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary btn-lg btn-block"><?php echo $button_cart; ?>
               </button>
 
@@ -413,8 +413,10 @@
     <?php echo $column_right; ?></div>
 </div>
 <script type="text/javascript">
-  globService.init('glob-init', 'product_detail', {});
-  globService.product.view("prod20016");
+    $('#glob-init').on('onload', function() {
+        globService.init('product_detail', {});
+        globService.product.view("prod20016");
+    });
 </script>
 <script type="text/javascript"><!--
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
