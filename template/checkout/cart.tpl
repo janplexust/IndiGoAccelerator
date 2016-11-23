@@ -78,7 +78,7 @@
                     <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="btn btn-primary"><i class="fa fa-refresh"></i></button>
 
                       <button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"
-                              onclick="globService.product.removeFromCart('<?php echo $product['cart_id']; ?>', $('#input-quantity').val());cart.remove('<?php echo $product['cart_id']; ?>');">
+                              onclick="globService.product.removeFromCart('<?php echo $product['cart_id']; ?>', $('input[name=quantity'[<?php echo $product['cart_id']; ?>]']').val());cart.remove('<?php echo $product['cart_id']; ?>');">
                         <i class="fa fa-times-circle"></i></button>
 
                     </span></div></td>
@@ -133,4 +133,9 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+<script>
+  console.log('init shopping cart page');
+  globService.init('shopping_cart', {});
+  console.log('category id: ', url.substr(idStart));
+</script>
 <?php echo $footer; ?>
