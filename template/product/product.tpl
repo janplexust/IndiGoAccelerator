@@ -106,7 +106,7 @@
 
 
                     <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"
-                            onclick="var rate = $('input[name=rating]:checked').val();var id = '<?php echo $product_id ?>';globService.product.rate(id, rate); if(rate > 2) globService.product.like(id); else globService.product.dislike(id);globService.product.comment(id, $('textarea#input-review').val());">
+                            onclick="var rate = $('input[name=rating]:checked').val();var id = '<?php echo $product_id ?>';globService.product.rate(id, rate);globService.product.comment(id, $('textarea#input-review').val());">
                       <?php echo $button_continue; ?></button>
 
 
@@ -335,26 +335,23 @@
             <hr>
             <!-- AddThis Button BEGIN -->
 
-            <div onclick="globService.product.share($('#input-product-id').val());"
-                    class="addthis_toolbox addthis_default_style" data-url="<?php echo $share; ?>">
+            <div class="addthis_toolbox addthis_default_style" data-url="<?php echo $share; ?>">
 
                 <button type="button"
                         onclick="globService.product.share($('#input-product-id').val());">
-                    <span class="hidden-xs hidden-sm hidden-md">Share</span> <i class="fa fa-share-alt"></i>
+                    <span class="hidden-xs">Share</span> <i class="fa fa-share-alt"></i>
                 </button>
 
                 <button type="button"
                         onclick="globService.product.like($('#input-product-id').val());">
-                    <span class="hidden-xs hidden-sm hidden-md">Like</span> <i class="fa fa-thumbs-o-up"></i>
+                    <span class="hidden-xs">Like</span> <i class="fa fa-thumbs-o-up"></i>
                 </button>
 
                 <button type="button"
                         onclick="globService.product.dislike($('#input-product-id').val());">
-                    <span class="hidden-xs hidden-sm hidden-md">Dislike</span> <i class="fa fa-thumbs-o-down"></i>
+                    <span class="hidden-xs">Dislike</span> <i class="fa fa-thumbs-o-down"></i>
                 </button>
             </div>
-
-            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script>
             <!-- AddThis Button END -->
           </div>
           <?php } ?>
@@ -471,7 +468,7 @@ $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 });
 //--></script>
 <script type="text/javascript"><!--
-$('#button-cart').on('onselect', function() { // TODO restore to onclick (select only for test)
+$('#button-cart').on('onclick', function() {
 	$.ajax({
 		url: 'index.php?route=checkout/cart/add',
 		type: 'post',
