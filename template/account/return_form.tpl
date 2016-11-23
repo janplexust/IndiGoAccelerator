@@ -168,7 +168,7 @@
         <div class="buttons clearfix">
           <div class="pull-left"><a href="<?php echo $back; ?>" class="btn btn-default"><?php echo $button_back; ?></a></div>
           <div class="pull-right">
-            <input type="submit" value="<?php echo $button_submit; ?>" class="btn btn-primary" />
+            <input onclick="globService.product.returnProduct('<?php echo $product['product_id']; ?>', $('input-comment').val());" type="submit" value="<?php echo $button_submit; ?>" class="btn btn-primary" />
           </div>
         </div>
         <?php } ?>
