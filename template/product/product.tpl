@@ -103,7 +103,13 @@
                 <?php echo $captcha; ?>
                 <div class="buttons clearfix">
                   <div class="pull-right">
-                    <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"><?php echo $button_continue; ?></button>
+
+
+                    <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"
+                            onclick="globService.product.rate('<?php echo $product['product_id'] ?>', $('input[name=rating]:checked').val());">
+                      <?php echo $button_continue; ?></button>
+
+
                   </div>
                 </div>
                 <?php } else { ?>
@@ -121,8 +127,15 @@
         <?php } ?>
         <div class="<?php echo $class; ?>">
           <div class="btn-group">
-            <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i></button>
-            <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product_id; ?>');"><i class="fa fa-exchange"></i></button>
+
+
+              <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_wishlist; ?>"
+                    onclick="globService.product.addToWishlist('<?php echo $product['product_id'] ?>');wishlist.add('<?php echo $product_id; ?>');">
+                <i class="fa fa-heart"></i>
+              </button>
+
+
+              <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product_id; ?>');"><i class="fa fa-exchange"></i></button>
           </div>
           <h1><?php echo $heading_title; ?></h1>
           <ul class="list-unstyled">
@@ -375,13 +388,13 @@
 
               <!--globService.product.addToCart("prod20016", 2); TODO addToCart event-->
               <button type="button"
-                      onclick="console.log('addToCart event', '<?php echo $product['product_id']; ?>');globService.product.addToCart('<?php echo $product['product_id']; ?>', 1);cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
+                      onclick="globService.product.addToCart('<?php echo $product['product_id']; ?>', 1);return false;cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
                 <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span> <i class="fa fa-shopping-cart"></i>
               </button>
 
 
               <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>"
-                      onclick="console.log('add_to_wishlist event', '<?php echo $product['product_id'] ?>');globService.product.addToWishlist('<?php echo $product['product_id'] ?>');wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i>
+                      onclick="globService.product.addToWishlist('<?php echo $product['product_id'] ?>');wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i>
               </button>
 
               <button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
