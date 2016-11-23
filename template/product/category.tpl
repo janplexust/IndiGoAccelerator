@@ -96,13 +96,16 @@
       </div>
       <div class="row">
         <?php foreach ($products as $product) { ?>
-        <div class="product-layout product-list col-xs-12" onload="alert('Ahtung!');globService.product.show('<?php echo $product['product_id']; ?>');">
+        <div class="product-layout product-list col-xs-12">
           <div class="product-thumb">
             <div class="image">
 
               <a href="<?php echo $product['href']; ?>"
-                 onload="alert('Ahtung inner!');globService.product.show('<?php echo $product['product_id']; ?>');"
                  onclick="globService.product.click('<?php echo $product['product_id']; ?>');">
+                <script>
+                  alert('Ahtung inner!');
+                  globService.product.show('<?php echo $product['product_id']; ?>');
+                </script>
 
                 <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></div>
             <div>
@@ -173,6 +176,6 @@
   alert('Wat?');
   console.log('init category page');
   globService.init('category_listing', {});
-  globService.category.view('cat20016');
+  globService.category.view('<?php echo $heading_title; ?>');
 </script>
 <?php echo $footer; ?>

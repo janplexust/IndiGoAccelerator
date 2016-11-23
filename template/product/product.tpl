@@ -437,7 +437,7 @@
     alert('Wat?');
     console.log('init product page');
     globService.init('product_detail', {});
-    globService.product.view('prod20016');
+    globService.product.view('<?php echo $product_id ?>');
 </script>
 <script type="text/javascript"><!--
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
