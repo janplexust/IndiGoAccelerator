@@ -106,7 +106,7 @@
 
 
                     <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"
-                            onclick="globService.product.rate('<?php echo $product['product_id'] ?>', $('input[name=rating]:checked').val());">
+                            onclick="var rate = $('input[name=rating]:checked').val();var id = '<?php echo $product_id ?>';globService.product.rate(id, rate); if(rate > 2) globService.product.like(id); else globService.product.dislike(id);globService.product.comment(id, $("textarea#input-review").val());">
                       <?php echo $button_continue; ?></button>
 
 
@@ -130,7 +130,7 @@
 
 
               <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_wishlist; ?>"
-                    onclick="globService.product.addToWishlist('<?php echo $product['product_id'] ?>');wishlist.add('<?php echo $product_id; ?>');">
+                    onclick="globService.product.addToWishlist('<?php echo $product_id ?>');wishlist.add('<?php echo $product_id; ?>');">
                 <i class="fa fa-heart"></i>
               </button>
 
@@ -334,7 +334,10 @@
               <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $reviews; ?></a> / <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $text_write; ?></a></p>
             <hr>
             <!-- AddThis Button BEGIN -->
-            <div class="addthis_toolbox addthis_default_style" data-url="<?php echo $share; ?>"><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> <a class="addthis_button_tweet"></a> <a class="addthis_button_pinterest_pinit"></a> <a class="addthis_counter addthis_pill_style"></a></div>
+
+            <div onclick="globService.product.share($('#input-product-id').val());"
+                    class="addthis_toolbox addthis_default_style" data-url="<?php echo $share; ?>"><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> <a class="addthis_button_tweet"></a> <a class="addthis_button_pinterest_pinit"></a> <a class="addthis_counter addthis_pill_style"></a></div>
+
             <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script>
             <!-- AddThis Button END -->
           </div>
@@ -388,7 +391,7 @@
 
               <!--globService.product.addToCart("prod20016", 2); TODO addToCart event-->
               <button type="button"
-                      onclick="globService.product.addToCart('<?php echo $product['product_id']; ?>', 1);return false;cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
+                      onclick="globService.product.addToCart('<?php echo $product['product_id']; ?>', 1);cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
                 <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span> <i class="fa fa-shopping-cart"></i>
               </button>
 

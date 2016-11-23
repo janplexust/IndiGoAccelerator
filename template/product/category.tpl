@@ -128,8 +128,17 @@
                 <?php } ?>
               </div>
               <div class="button-group">
-                <button type="button" onclick="alert('go!');cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></button>
-                <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button>
+
+                <button type="button"
+                        onclick="globService.product.addToCart('<?php echo $product['product_id']; ?>', 1);return false;cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
+                  <i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span>
+                </button>
+
+                <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>"
+                        onclick="globService.product.addToWishlist('<?php echo $product['product_id'] ?>');wishlist.add('<?php echo $product['product_id']; ?>');">
+                  <i class="fa fa-heart"></i>
+                </button>
+
                 <button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
               </div>
             </div>
