@@ -1,6 +1,6 @@
 
 <?php echo $header; ?>
-<div class="container" id="glob-init">
+<div class="container" onload="console.log('init product page', '<?php echo $product_id ?>');globService.init('product_detail', {});globService.product.view("prod20016");">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
@@ -106,7 +106,7 @@
 
 
                     <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"
-                            onclick="var rate = $('input[name=rating]:checked').val();var id = '<?php echo $product_id ?>';globService.product.rate(id, rate); if(rate > 2) globService.product.like(id); else globService.product.dislike(id);globService.product.comment(id, $("textarea#input-review").val());">
+                            onclick="var rate = $('input[name=rating]:checked').val();var id = '<?php echo $product_id ?>';globService.product.rate(id, rate); if(rate > 2) globService.product.like(id); else globService.product.dislike(id);globService.product.comment(id, $('textarea#input-review').val());">
                       <?php echo $button_continue; ?></button>
 
 
@@ -429,13 +429,6 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
-<script type="text/javascript">
-    $('#glob-init').on('onload', function() {
-        console.log('init product page');
-        globService.init('product_detail', {});
-        globService.product.view("prod20016");
-    });
-</script>
 <script type="text/javascript"><!--
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 	$.ajax({
