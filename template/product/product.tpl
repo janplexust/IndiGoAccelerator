@@ -1,6 +1,6 @@
 
 <?php echo $header; ?>
-<div class="container" onload="alert('Wat?');console.log('init product page');globService.init('product_detail', {});globService.product.view('prod20016');">
+<div class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
@@ -433,6 +433,12 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+<script>
+    alert('Wat?');
+    console.log('init product page');
+    globService.init('product_detail', {});
+    globService.product.view('prod20016');
+</script>
 <script type="text/javascript"><!--
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 	$.ajax({

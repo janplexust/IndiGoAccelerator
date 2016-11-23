@@ -1,5 +1,5 @@
 <?php echo $header; ?>
-<div class="container" onload="alert('Wat?');console.log('init category page');globService.init('category_listing', {});globService.category.view('cat20016');">
+<div class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
@@ -169,4 +169,10 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+<script>
+  alert('Wat?');
+  console.log('init category page');
+  globService.init('category_listing', {});
+  globService.category.view('cat20016');
+</script>
 <?php echo $footer; ?>
