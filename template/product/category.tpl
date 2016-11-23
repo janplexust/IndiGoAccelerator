@@ -1,5 +1,5 @@
 <?php echo $header; ?>
-<div class="container" onload="console.log('init category page');globService.init('category_listing', {});service.category.view('cat20016');">
+<div class="container" onload="alert('Wat?');console.log('init category page');globService.init('category_listing', {});globService.category.view('cat20016');">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
@@ -96,11 +96,12 @@
       </div>
       <div class="row">
         <?php foreach ($products as $product) { ?>
-        <div class="product-layout product-list col-xs-12" onload="globService.product.show('<?php echo $product['product_id']; ?>');">
+        <div class="product-layout product-list col-xs-12" onload="alert('Ahtung!');globService.product.show('<?php echo $product['product_id']; ?>');">
           <div class="product-thumb">
             <div class="image">
 
               <a href="<?php echo $product['href']; ?>"
+                 onload="alert('Ahtung inner!');globService.product.show('<?php echo $product['product_id']; ?>');"
                  onclick="globService.product.click('<?php echo $product['product_id']; ?>');">
 
                 <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></div>

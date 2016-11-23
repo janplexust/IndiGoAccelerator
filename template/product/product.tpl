@@ -1,6 +1,6 @@
 
 <?php echo $header; ?>
-<div class="container" onload="console.log('init product page');globService.init('product_detail', {});globService.product.view('prod20016');">
+<div class="container" onload="alert('Wat?');console.log('init product page');globService.init('product_detail', {});globService.product.view('prod20016');">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
