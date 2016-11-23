@@ -1,8 +1,5 @@
 
 <?php echo $header; ?>
-<script>
-    var globService = globService;
-</script>
 <div class="container" id="glob-init">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -301,7 +298,7 @@
 
               <!--globService.product.addToCart("prod20016", 2); TODO addToCart event-->
               <button type="button" id="button-cart"
-                      onclick="console.log('addToCart event');globService.product.addToCart($('#input-product-id').val(), $('#input-quantity').val());console.log('addToCart event');"
+                      onclick="console.log('addToCart event');globService.product.addToCart($('#input-product-id').val(), $('#input-quantity').val());"
                       data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary btn-lg btn-block"><?php echo $button_cart; ?>
               </button>
 
@@ -378,7 +375,7 @@
 
               <!--globService.product.addToCart("prod20016", 2); TODO addToCart event-->
               <button type="button"
-                      onclick="console.log('addToCart event', $product['product_id']);globService.product.addToCart($product['product_id'], 1);cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
+                      onclick="console.log('addToCart event', '<?php echo $product['product_id']; ?>');globService.product.addToCart('<?php echo $product['product_id']; ?>', 1);cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
                 <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span> <i class="fa fa-shopping-cart"></i>
               </button>
 
@@ -418,23 +415,11 @@
 </div>
 <script type="text/javascript">
     $('#glob-init').on('onload', function() {
+        console.log('init product page');
         globService.init('product_detail', {});
         globService.product.view("prod20016");
     });
 </script>
-<script type="text/javascript">
-    $('#button-cart').on('onclick', function() {
-        globService.product.addToCart($('#input-product-id').val(), $('#input-quantity').val());
-        console.log('addToCart event by jQuery', $('#input-product-id').val(), $('#input-quantity').val());
-        globService.product.addToCart($product['product_id'], 1);
-    });
-</script>
-<!--<script type="text/javascript">
-    $('#addToCart-'<?php echo $product['product_id'] ?>'').on('onclick', function() {
-        console.log('addToCart event by jQuery', $product['product_id']);
-        globService.product.addToCart($product['product_id'], 1);
-    });
-</script>-->
 <script type="text/javascript"><!--
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 	$.ajax({
