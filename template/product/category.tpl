@@ -102,10 +102,9 @@
 
               <a href="<?php echo $product['href']; ?>"
                  onclick="globService.product.click('<?php echo $product['product_id']; ?>');">
-                <script>
-                  alert('Ahtung inner!');
+                <!--<script>
                   globService.product.show('<?php echo $product['product_id']; ?>');
-                </script>
+                </script>-->
 
                 <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></div>
             <div>
@@ -173,9 +172,9 @@
     <?php echo $column_right; ?></div>
 </div>
 <script>
-  alert('Wat?');
   console.log('init category page');
   globService.init('category_listing', {});
   globService.category.view('<?php echo $heading_title; ?>');
+  console.log('category id: ', '<?php echo $category_id; ?>');
 </script>
 <?php echo $footer; ?>

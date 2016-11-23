@@ -337,9 +337,21 @@
 
             <div onclick="globService.product.share($('#input-product-id').val());"
                     class="addthis_toolbox addthis_default_style" data-url="<?php echo $share; ?>">
-                <a onclick="globService.product.share($('#input-product-id').val());" class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-                <a onclick="globService.product.share($('#input-product-id').val());" class="addthis_button_tweet"></a> <a class="addthis_button_pinterest_pinit"></a>
-                <a onclick="globService.product.share($('#input-product-id').val());" class="addthis_counter addthis_pill_style"></a>
+
+                <button type="button"
+                        onclick="globService.product.share($('#input-product-id').val());">
+                    <span class="hidden-xs hidden-sm hidden-md">Share</span> <i class="fa fa-share-alt"></i>
+                </button>
+
+                <button type="button"
+                        onclick="globService.product.like($('#input-product-id').val());">
+                    <span class="hidden-xs hidden-sm hidden-md">Like</span> <i class="fa fa-thumbs-o-up"></i>
+                </button>
+
+                <button type="button"
+                        onclick="globService.product.dislike($('#input-product-id').val());">
+                    <span class="hidden-xs hidden-sm hidden-md">Dislike</span> <i class="fa fa-thumbs-o-down"></i>
+                </button>
             </div>
 
             <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script>
@@ -434,7 +446,6 @@
     <?php echo $column_right; ?></div>
 </div>
 <script>
-    alert('Wat?');
     console.log('init product page');
     globService.init('product_detail', {});
     globService.product.view('<?php echo $product_id ?>');
