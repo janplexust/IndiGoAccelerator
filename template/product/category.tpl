@@ -15,6 +15,23 @@
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <h2><?php echo $heading_title; ?></h2>
+      <div class="button-group">
+
+        <button type="button"
+                onclick="globService.category.share($('#input-product-id').val());">
+          <span class="hidden-xs">Share</span> <i class="fa fa-share-alt"></i>
+        </button>
+
+        <button type="button"
+                onclick="globService.category.like($('#input-product-id').val());">
+          <span class="hidden-xs">Like</span> <i class="fa fa-thumbs-o-up"></i>
+        </button>
+
+        <button type="button"
+                onclick="globService.category.dislike($('#input-product-id').val());">
+          <span class="hidden-xs">Dislike</span> <i class="fa fa-thumbs-o-down"></i>
+        </button>
+      </div>
       <?php if ($thumb || $description) { ?>
       <div class="row">
         <?php if ($thumb) { ?>
@@ -141,7 +158,7 @@
               <div class="button-group">
 
                 <button type="button"
-                        onclick="globService.product.addToCart('<?php echo $product['product_id']; ?>', 1);return false;cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
+                        onclick="globService.product.addToCart('<?php echo $product['product_id']; ?>', 1);cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
                   <i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span>
                 </button>
 
@@ -175,7 +192,7 @@
   console.log('init category page');
   globService.init('category_listing', {});
   globService.category.view('<?php echo $heading_title; ?>');
-  var url = window.location.hostname;
+  var url = window.location.href;
   var idStart = url.lastIndexOf('=') + 1;
   console.log('category id: ', url.substr(idStart));
 </script>

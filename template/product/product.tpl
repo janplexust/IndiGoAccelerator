@@ -335,7 +335,7 @@
             <hr>
             <!-- AddThis Button BEGIN -->
 
-            <div class="addthis_toolbox addthis_default_style" data-url="<?php echo $share; ?>">
+            <div class="button-group">
 
                 <button type="button"
                         onclick="globService.product.share($('#input-product-id').val());">
@@ -401,13 +401,10 @@
             </div>
             <div class="button-group">
 
-
-              <!--globService.product.addToCart("prod20016", 2); TODO addToCart event-->
               <button type="button"
                       onclick="globService.product.addToCart('<?php echo $product['product_id']; ?>', 1);cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
                 <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span> <i class="fa fa-shopping-cart"></i>
               </button>
-
 
               <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>"
                       onclick="globService.product.addToWishlist('<?php echo $product['product_id'] ?>');wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i>
