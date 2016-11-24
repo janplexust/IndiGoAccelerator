@@ -302,7 +302,11 @@
 <div class="buttons clearfix">
   <div class="pull-right"><?php echo $text_agree; ?> &nbsp;
     <input type="checkbox" name="agree" value="1" />
-    <input type="button" value="<?php echo $button_continue; ?>" id="button-register" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary" />
+
+    <input
+            onclick="globService.store.registerUser({'name': $('#input-payment-firstname').val()});"
+            type="button" value="<?php echo $button_continue; ?>" id="button-register" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary" />
+
   </div>
 </div>
 <?php } else { ?>
@@ -312,6 +316,9 @@
   </div>
 </div>
 <?php } ?>
+<script>
+  globService.init('static', {});
+</script>
 <script type="text/javascript"><!--
 // Sort the custom fields
 $('#account .form-group[data-sort]').detach().each(function() {
