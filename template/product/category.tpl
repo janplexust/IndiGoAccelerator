@@ -191,9 +191,9 @@
 <script>
   console.log('init category page');
   globService.init('category_listing', {});
-  globService.category.view(url.substr(idStart));
   var url = window.location.href;
   var idStart = url.lastIndexOf('=') + 1;
+  globService.category.view(url.substr(idStart));
   console.log('category id: ', url.substr(idStart), 'category name: ', '<?php echo $heading_title; ?>');
 </script>
 <?php echo $footer; ?>

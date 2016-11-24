@@ -1,8 +1,15 @@
 <div class="buttons">
   <div class="pull-right">
-    <input type="button" value="<?php echo $button_confirm; ?>" id="button-confirm" class="btn btn-primary" data-loading-text="<?php echo $text_loading; ?>" />
+
+    <input
+            onclick="globService.store.orderComplete();"
+            type="button" value="<?php echo $button_confirm; ?>" id="button-confirm" class="btn btn-primary" data-loading-text="<?php echo $text_loading; ?>" />
+
   </div>
 </div>
+<script>
+    globService.init('checkout_page', {});
+</script>
 <script type="text/javascript"><!--
 $('#button-confirm').on('click', function() {
 	$.ajax({
