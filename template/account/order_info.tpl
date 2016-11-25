@@ -95,6 +95,7 @@
                 <a href="<?php echo $product['reorder']; ?>" data-toggle="tooltip" title="<?php echo $button_reorder; ?>" class="btn btn-primary"><i class="fa fa-shopping-cart"></i></a>
                 <?php } ?>
                 <!--href="<?php echo $product['return']; ?>-->
+                <input type="text" value="<?php echo $product ?>">
                 <a
                         onclick="console.log('<?php echo $product['product_id'] ?>');globService.product.returnProduct('<?php echo $product['product_id'] ?>', 'because');"
                         href="#" data-toggle="tooltip" title="<?php echo $button_return; ?>" class="btn btn-danger"><i class="fa fa-reply"></i></a></td>
