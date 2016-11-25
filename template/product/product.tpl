@@ -81,7 +81,7 @@
                 <div class="form-group required">
                   <div class="col-sm-12">
                     <label class="control-label" for="input-review"><?php echo $entry_review; ?></label>
-                    <textarea name="text" rows="5" id="input-review" class="form-control"></textarea>
+                    <input type="text" rows="5" id="input-review" class="form-control"/>
                     <div class="help-block"><?php echo $text_note; ?></div>
                   </div>
                 </div>

@@ -304,7 +304,20 @@
     <input type="checkbox" name="agree" value="1" />
 
     <input
-            onclick="globService.store.registerUser({'name': $('#input-payment-firstname').val()});"
+            onclick="globService.store.registerUser({'firstname': $('#input-payment-firstname').val(),\
+                'lastname': $('#input-payment-lastname').val(), \
+                'email': $('#input-payment-email').val(), \
+                'telephone': $('#input-payment-telephone').val(), \
+                'fax': $('#input-payment-fax').val(), \
+                'password': $('#input-payment-password').val(), \
+                'company': $('#input-payment-company').val(), \
+                'address_1': $('#input-payment-address-1').val(), \
+                'address_2': $('#input-payment-address-2').val(), \
+                'city': $('#input-payment-city').val(), \
+                'postcode': $('#input-payment-postcode').val(), \
+                'newsletter': $('#input-payment-newsletter').val(), \
+                'zone': $('#input-payment-zone').val() \
+                });"
             type="button" value="<?php echo $button_continue; ?>" id="button-register" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary" />
 
   </div>
@@ -317,7 +330,8 @@
 </div>
 <?php } ?>
 <script>
-  globService.init('static', {});
+    console.log("Checkout register");
+    globService.init('register', {});
 </script>
 <script type="text/javascript"><!--
 // Sort the custom fields

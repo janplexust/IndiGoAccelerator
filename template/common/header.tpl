@@ -85,6 +85,46 @@
     </div>
   </div>
 </header>
+<div>
+  <div class="button-group">
+
+    <button type="button"
+            onclick="globService.store.likeStore();">
+      <span class="hidden-xs">Like</span> <i class="fa fa-thumbs-o-up"></i>
+    </button>
+
+    <button type="button"
+            onclick="globService.store.dislikeStore();">
+      <span class="hidden-xs">Dislike</span> <i class="fa fa-thumbs-o-down"></i>
+    </button>
+  </div>
+
+  <form class="form-horizontal" id="form-review">
+    <div class="form-group required">
+      <div class="col-sm-12">
+        <label class="control-label">Rate</label>
+        &nbsp;&nbsp;&nbsp;Bad&nbsp;
+        <input type="radio" name="rating" value="1" />
+        &nbsp;
+        <input type="radio" name="rating" value="2" />
+        &nbsp;
+        <input type="radio" name="rating" value="3" />
+        &nbsp;
+        <input type="radio" name="rating" value="4" />
+        &nbsp;
+        <input type="radio" name="rating" value="5" />
+        &nbsp;Good</div>
+    </div>
+    <div class="buttons clearfix">
+
+      <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"
+              onclick="var rate = $('input[name=rating]:checked').val();globService.store.rateStore(id, rate);">
+        <?php echo $button_continue; ?></button>
+
+    </div>
+  </form>
+
+</div>
 <?php if ($categories) { ?>
 <div class="container">
   <nav id="menu" class="navbar">

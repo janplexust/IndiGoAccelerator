@@ -44,5 +44,5 @@
   </div>
 </div>
 <script>
-    globService.init('checkout_page', {});
+    globService.init('login', {});
 </script>

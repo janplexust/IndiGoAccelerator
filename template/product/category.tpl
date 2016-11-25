@@ -31,7 +31,6 @@
                 onclick="globService.category.dislike($('#input-product-id').val());">
           <span class="hidden-xs">Dislike</span> <i class="fa fa-thumbs-o-down"></i>
         </button>
-        <input type="text" onclick="">
       </div>
 
 
@@ -39,7 +38,7 @@
         <div class="form-group required">
           <div class="col-sm-12">
             <label class="control-label" for="input-review">Comment</label>
-            <textarea name="text" rows="5" id="input-review" class="form-control"></textarea>
+            <textarea name="text" rows="1" id="input-review" class="form-control"></textarea>
           </div>
         </div>
         <div class="form-group required">
@@ -60,7 +59,7 @@
         <div class="buttons clearfix">
 
             <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"
-                    onclick="var rate = $('input[name=rating]:checked').val();var id = '<?php echo $product_id ?>';globService.category.rate(id, rate);globService.category.comment(id, $('textarea#input-review').val());">
+                    onclick="var rate = $('input[name=rating]:checked').val();globService.category.rate(id, rate);globService.category.comment(id, $('textarea#input-review').val());">
               <?php echo $button_continue; ?></button>
 
         </div>
@@ -228,6 +227,7 @@
   globService.init('category_listing', {});
   var url = window.location.href;
   var idStart = url.lastIndexOf('=') + 1;
-  globService.category.view(url.substr(idStart));
+  var id = url.substr(idStart);
+  globService.category.view(id);
 </script>
 <?php echo $footer; ?>

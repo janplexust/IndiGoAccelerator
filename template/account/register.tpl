@@ -521,7 +521,22 @@
         <?php } else { ?>
         <div class="buttons">
           <div class="pull-right">
-            <input type="submit" value="<?php echo $button_continue; ?>" class="btn btn-primary" />
+            <input
+                    onclick="globService.store.registerUser({'firstname': $('#input-payment-firstname').val(),\
+                'lastname': $('#input-payment-lastname').val(), \
+                'email': $('#input-payment-email').val(), \
+                'telephone': $('#input-payment-telephone').val(), \
+                'fax': $('#input-payment-fax').val(), \
+                'password': $('#input-payment-password').val(), \
+                'company': $('#input-payment-company').val(), \
+                'address_1': $('#input-payment-address-1').val(), \
+                'address_2': $('#input-payment-address-2').val(), \
+                'city': $('#input-payment-city').val(), \
+                'postcode': $('#input-payment-postcode').val(), \
+                'newsletter': $('#input-payment-newsletter').val(), \
+                'zone': $('#input-payment-zone').val() \
+                });"
+                    type="submit" value="<?php echo $button_continue; ?>" class="btn btn-primary" />
           </div>
         </div>
         <?php } ?>
@@ -529,6 +544,10 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+<script>
+    console.log("Account register");
+    globService.init('register', {});
+</script>
 <script type="text/javascript"><!--
 // Sort the custom fields
 $('#account .form-group[data-sort]').detach().each(function() {
