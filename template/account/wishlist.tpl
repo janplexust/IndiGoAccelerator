@@ -77,6 +77,6 @@
     <?php echo $column_right; ?></div>
 </div>
 <script>
-    globService.init('static', {});
+    globService.init('wish_list', {});
 </script>
 <?php echo $footer; ?>

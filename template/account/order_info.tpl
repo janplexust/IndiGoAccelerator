@@ -94,9 +94,10 @@
               <td class="text-right" style="white-space: nowrap;"><?php if ($product['reorder']) { ?>
                 <a href="<?php echo $product['reorder']; ?>" data-toggle="tooltip" title="<?php echo $button_reorder; ?>" class="btn btn-primary"><i class="fa fa-shopping-cart"></i></a>
                 <?php } ?>
+                <!--href="<?php echo $product['return']; ?>-->
                 <a
-                        onclick="globService.product.returnProduct("<?php echo $product['return']; ?>", "because");"
-                        href="<?php echo $product['return']; ?>" data-toggle="tooltip" title="<?php echo $button_return; ?>" class="btn btn-danger"><i class="fa fa-reply"></i></a></td>
+                        onclick="globService.product.returnProduct("<?php echo $product['product_id']; ?>", "because");"
+                        href="#" data-toggle="tooltip" title="<?php echo $button_return; ?>" class="btn btn-danger"><i class="fa fa-reply"></i></a></td>
             </tr>
             <?php } ?>
             <?php foreach ($vouchers as $voucher) { ?>
@@ -173,4 +174,7 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+<script>
+    globService.init('order_information', {});
+</script>
 <?php echo $footer; ?>

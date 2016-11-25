@@ -43,7 +43,7 @@
 	  </fieldset>
 	  <div class="buttons">
 		<div class="pull-right">
-		  <input onclick="alert('confirm worldpay!');" type="submit" value="<?php echo $button_confirm; ?>" id="button-confirm" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary" />
+		  <input type="submit" value="<?php echo $button_confirm; ?>" id="button-confirm" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary" />
 		</div>
 	  </div>
 	</form>
