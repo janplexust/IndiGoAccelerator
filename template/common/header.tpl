@@ -100,9 +100,8 @@
   </div>
 
   <form class="form-horizontal" id="form-review">
-    <div class="form-group required">
+    <div class="form-group">
       <div class="col-sm-12">
-        <label class="control-label">Rate</label>
         &nbsp;&nbsp;&nbsp;Bad&nbsp;
         <input type="radio" name="rating" value="1" />
         &nbsp;
@@ -114,13 +113,10 @@
         &nbsp;
         <input type="radio" name="rating" value="5" />
         &nbsp;Good</div>
-    </div>
-    <div class="buttons clearfix">
-
       <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"
               onclick="var rate = $('input[name=rating]:checked').val();globService.store.rateStore(id, rate);">
-        <?php echo $button_continue; ?></button>
-
+        Rate!
+      </button>
     </div>
   </form>
 

@@ -11,4 +11,7 @@
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?><?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+<script>
+    globService.init('home', {});
+</script>
 <?php echo $footer; ?>
