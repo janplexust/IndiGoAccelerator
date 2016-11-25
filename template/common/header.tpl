@@ -96,7 +96,7 @@
         <?php foreach ($categories as $category) { ?>
         <?php if ($category['children']) { ?>
         <li class="dropdown"><a
-                onclick="alert('var url = '<?php echo $category['href']; ?>';var idStart = url.lastIndexOf('=') + 1;globService.category.click(url.substr(idStart));"
+                onclick="var url = '<?php echo $category['href']; ?>';var idStart = url.lastIndexOf('=') + 1;globService.category.click(url.substr(idStart));"
                 href="<?php echo $category['href']; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category['name']; ?></a>
           <div class="dropdown-menu">
             <div class="dropdown-inner">

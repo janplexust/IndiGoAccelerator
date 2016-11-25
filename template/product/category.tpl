@@ -31,7 +31,42 @@
                 onclick="globService.category.dislike($('#input-product-id').val());">
           <span class="hidden-xs">Dislike</span> <i class="fa fa-thumbs-o-down"></i>
         </button>
+        <input type="text" onclick="">
       </div>
+
+
+      <form class="form-horizontal" id="form-review">
+        <div class="form-group required">
+          <div class="col-sm-12">
+            <label class="control-label" for="input-review">Comment</label>
+            <textarea name="text" rows="5" id="input-review" class="form-control"></textarea>
+          </div>
+        </div>
+        <div class="form-group required">
+          <div class="col-sm-12">
+            <label class="control-label">Rate</label>
+            &nbsp;&nbsp;&nbsp;Bad&nbsp;
+            <input type="radio" name="rating" value="1" />
+            &nbsp;
+            <input type="radio" name="rating" value="2" />
+            &nbsp;
+            <input type="radio" name="rating" value="3" />
+            &nbsp;
+            <input type="radio" name="rating" value="4" />
+            &nbsp;
+            <input type="radio" name="rating" value="5" />
+            &nbsp;Good</div>
+        </div>
+        <div class="buttons clearfix">
+
+            <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"
+                    onclick="var rate = $('input[name=rating]:checked').val();var id = '<?php echo $product_id ?>';globService.category.rate(id, rate);globService.category.comment(id, $('textarea#input-review').val());">
+              <?php echo $button_continue; ?></button>
+
+        </div>
+      </form>
+
+
       <?php if ($thumb || $description) { ?>
       <div class="row">
         <?php if ($thumb) { ?>
