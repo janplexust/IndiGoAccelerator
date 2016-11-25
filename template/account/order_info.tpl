@@ -96,7 +96,7 @@
                 <?php } ?>
                 <!--href="<?php echo $product['return']; ?>-->
                 <a
-                        onclick="console.log('<?php echo $product ?>');globService.product.returnProduct('<?php echo $product['product_id']; ?>', 'because');"
+                        onclick="console.log('<?php echo $product['id'] ?>');globService.product.returnProduct('<?php echo $product['product_id']; ?>', 'because');"
                         href="#" data-toggle="tooltip" title="<?php echo $button_return; ?>" class="btn btn-danger"><i class="fa fa-reply"></i></a></td>
             </tr>
             <?php } ?>
