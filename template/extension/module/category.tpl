@@ -18,7 +18,9 @@
   <?php } ?>
   <?php } ?>
   <?php } else { ?>
-  <a href="<?php echo $category['href']; ?>" class="list-group-item"><?php echo $category['name']; ?></a>
+  <a
+          onclick="alert('<?php echo $category['category_id'] ?>');"
+          href="<?php echo $category['href']; ?>" class="list-group-item"><?php echo $category['name']; ?></a>
   <?php } ?>
   <?php } ?>
 </div>
