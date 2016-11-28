@@ -43,7 +43,7 @@
           <div class="pull-right">
 
             <input type="submit" value="<?php echo $button_continue; ?>" class="btn btn-primary"
-                   onclick="var subscr = true;if($('input[name=newsletter]:checked').val() == 0) subscr=false; globService.store.updateUser({'subscribe': subscr);"
+                   onclick="var subscr = true;if($('input[name=newsletter]:checked').val() == 0) subscr=false; globService.store.updateUser({'subscribe': subscr});"
             />
 
           </div>

@@ -516,7 +516,7 @@
             <?php } ?>
             &nbsp;
             <input
-                    onclick="globService.store.registerUser({firstname: $('#input-firstname').val(), 'lastname': $('#input-lastname').val(), 'email': $('#input-email').val(), 'telephone': $('#input-telephone').val(), 'fax': $('#input-fax').val(), 'password': $('#input-password').val(), 'company': $('#input-company').val(), 'address_1': $('#input-address-1').val(), 'address_2': $('#input-address-2').val(), 'city': $('#input-city').val(), 'postcode': $('#input-postcode').val(), 'newsletter': $('#input-newsletter').val(), 'zone': $('#input-zone').val() });"
+                    onclick="var subscr = true;if($('input[name=newsletter]:checked').val() == 0) subscr=false; globService.store.registerUser({firstname: $('#input-firstname').val(), 'lastname': $('#input-lastname').val(), 'email': $('#input-email').val(), 'telephone': $('#input-telephone').val(), 'fax': $('#input-fax').val(), 'password': $('#input-password').val(), 'company': $('#input-company').val(), 'address_1': $('#input-address-1').val(), 'address_2': $('#input-address-2').val(), 'city': $('#input-city').val(), 'postcode': $('#input-postcode').val(), 'subscribe': subscr, 'zone': $('#input-zone').val() });"
                     type="submit" value="<?php echo $button_continue; ?>" class="btn btn-primary" />
           </div>
         </div>
