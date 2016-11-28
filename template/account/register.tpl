@@ -516,7 +516,7 @@
             <?php } ?>
             &nbsp;
             <input
-                    onclick="globService.store.registerUser({'firstname': $('#input-payment-firstname').val(), 'lastname': $('#input-payment-lastname').val(), 'email': $('#input-payment-email').val(), 'telephone': $('#input-payment-telephone').val(), 'fax': $('#input-payment-fax').val(), 'password': $('#input-payment-password').val(), 'company': $('#input-payment-company').val(), 'address_1': $('#input-payment-address-1').val(), 'address_2': $('#input-payment-address-2').val(), 'city': $('#input-payment-city').val(), 'postcode': $('#input-payment-postcode').val(), 'newsletter': $('#input-payment-newsletter').val(), 'zone': $('#input-payment-zone').val() });"
+                    onclick="globService.store.registerUser({firstname: $('#input-firstname').val(), 'lastname': $('#input-lastname').val(), 'email': $('#input-email').val(), 'telephone': $('#input-telephone').val(), 'fax': $('#input-fax').val(), 'password': $('#input-password').val(), 'company': $('#input-company').val(), 'address_1': $('#input-address-1').val(), 'address_2': $('#input-address-2').val(), 'city': $('#input-city').val(), 'postcode': $('#input-postcode').val(), 'newsletter': $('#input-newsletter').val(), 'zone': $('#input-zone').val() });"
                     type="submit" value="<?php echo $button_continue; ?>" class="btn btn-primary" />
           </div>
         </div>
@@ -524,7 +524,7 @@
         <div class="buttons">
           <div class="pull-right">
             <input
-                    onclick="globService.store.registerUser({'firstname': $('#input-payment-firstname').val(), 'lastname': $('#input-payment-lastname').val(), 'email': $('#input-payment-email').val(), 'telephone': $('#input-payment-telephone').val(), 'fax': $('#input-payment-fax').val(), 'password': $('#input-payment-password').val(), 'company': $('#input-payment-company').val(), 'address_1': $('#input-payment-address-1').val(), 'address_2': $('#input-payment-address-2').val(), 'city': $('#input-payment-city').val(), 'postcode': $('#input-payment-postcode').val(), 'newsletter': $('#input-payment-newsletter').val(), 'zone': $('#input-payment-zone').val() });"
+                    onclick="globService.store.registerUser({'firstname': $('#input-firstname').val(), 'lastname': $('#input-lastname').val(), 'email': $('#input-email').val(), 'telephone': $('#input-telephone').val(), 'fax': $('#input-fax').val(), 'password': $('#input-password').val(), 'company': $('#input-company').val(), 'address_1': $('#input-address-1').val(), 'address_2': $('#input-address-2').val(), 'city': $('#input-city').val(), 'postcode': $('#input-postcode').val(), 'newsletter': $('#input-newsletter').val(), 'zone': $('#input-zone').val() });"
                     type="submit" value="<?php echo $button_continue; ?>" class="btn btn-primary" />
           </div>
         </div>
