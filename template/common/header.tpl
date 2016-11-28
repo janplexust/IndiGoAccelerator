@@ -79,28 +79,29 @@
           <?php } ?>
         </div>
       </div>
-      <div class="col-sm-5"><?php echo $search; ?>
+      <div class="col-sm-4"><?php echo $search; ?>
       </div>
-      <div class="col-sm-3"><?php echo $cart; ?></div>
+      <div class="col-sm-2"><?php echo $cart; ?></div>
+      <div class="button-group">
+
+        <button type="button"
+                onclick="globService.store.likeStore();">
+          <span class="hidden-xs">Like</span> <i class="fa fa-thumbs-o-up"></i>
+        </button>
+
+        <button type="button"
+                onclick="globService.store.dislikeStore();">
+          <span class="hidden-xs">Dislike</span> <i class="fa fa-thumbs-o-down"></i>
+        </button>
+      </div>
     </div>
   </div>
 </header>
 <div>
-  <div class="button-group">
 
-    <button type="button"
-            onclick="globService.store.likeStore();">
-      <span class="hidden-xs">Like</span> <i class="fa fa-thumbs-o-up"></i>
-    </button>
-
-    <button type="button"
-            onclick="globService.store.dislikeStore();">
-      <span class="hidden-xs">Dislike</span> <i class="fa fa-thumbs-o-down"></i>
-    </button>
-  </div>
 
   <form class="form-horizontal" id="form-review">
-    <div class="form-group">
+    <span class="form-group">
       <div class="col-sm-12">
         &nbsp;&nbsp;&nbsp;Bad&nbsp;
         <input type="radio" name="rating" value="1" />
@@ -117,7 +118,7 @@
               onclick="var rate = $('input[name=rating]:checked').val();globService.store.rateStore(id, rate);">
         Rate!
       </button>
-    </div>
+    </span>
   </form>
 
 </div>
