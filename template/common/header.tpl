@@ -43,27 +43,24 @@
   <div class="container">
     <?php echo $currency; ?>
     <?php echo $language; ?>
-    <span class="form-group">
-      <form class="form-vertical" id="form-review">
-      <span class="col-sm-12">
+      <span>
         &nbsp;&nbsp;&nbsp;Bad&nbsp;
-        <input type="radio" name="rating" value="1" />
+        <input onclick="globService.store.rateStore(id, 1);">
+                type="radio" name="rating" value="1" />
         &nbsp;
-        <input type="radio" name="rating" value="2" />
+        <input onclick="globService.store.rateStore(id, 2);">
+                type="radio" name="rating" value="2" />
         &nbsp;
-        <input type="radio" name="rating" value="3" />
+        <input onclick="globService.store.rateStore(id, 3);">
+                type="radio" name="rating" value="3" />
         &nbsp;
-        <input type="radio" name="rating" value="4" />
+        <input onclick="globService.store.rateStore(id, 4);">
+                type="radio" name="rating" value="4" />
         &nbsp;
-        <input type="radio" name="rating" value="5" />
+        <input onclick="globService.store.rateStore(id, 5);">
+                type="radio" name="rating" value="5" />
         &nbsp;Good
       </span>
-      <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"
-              onclick="globService.store.rateStore(id, parseInt($('input[name='rating']:checked').val()));">
-        Rate!
-      </button>
-      </form>
-    </span>
     <div id="top-links" class="nav pull-right">
       <ul class="list-inline">
         <li><a href="<?php echo $contact; ?>"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md"><?php echo $telephone; ?></span></li>
