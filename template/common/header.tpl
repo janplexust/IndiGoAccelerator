@@ -45,19 +45,19 @@
     <?php echo $language; ?>
       <span>
         &nbsp;&nbsp;&nbsp;Bad&nbsp;
-        <input onclick="globService.store.rateStore(id, 1);">
+        <input onclick="globService.store.rateStore(id, 1);"
                 type="radio" name="rating" value="1" />
         &nbsp;
-        <input onclick="globService.store.rateStore(id, 2);">
+        <input onclick="globService.store.rateStore(id, 2);"
                 type="radio" name="rating" value="2" />
         &nbsp;
-        <input onclick="globService.store.rateStore(id, 3);">
+        <input onclick="globService.store.rateStore(id, 3);"
                 type="radio" name="rating" value="3" />
         &nbsp;
-        <input onclick="globService.store.rateStore(id, 4);">
+        <input onclick="globService.store.rateStore(id, 4);"
                 type="radio" name="rating" value="4" />
         &nbsp;
-        <input onclick="globService.store.rateStore(id, 5);">
+        <input onclick="globService.store.rateStore(id, 5);"
                 type="radio" name="rating" value="5" />
         &nbsp;Good
       </span>
