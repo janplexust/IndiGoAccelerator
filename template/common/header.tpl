@@ -43,9 +43,9 @@
   <div class="container">
     <?php echo $currency; ?>
     <?php echo $language; ?>
-    <div class="form-group">
+    <span class="form-group">
       <form class="form-vertical" id="form-review">
-      <div class="col-sm-12">
+      <span class="col-sm-12">
         &nbsp;&nbsp;&nbsp;Bad&nbsp;
         <input type="radio" name="rating" value="1" />
         &nbsp;
@@ -56,13 +56,14 @@
         <input type="radio" name="rating" value="4" />
         &nbsp;
         <input type="radio" name="rating" value="5" />
-        &nbsp;Good</div>
+        &nbsp;Good
+      </span>
       <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"
-              onclick="globService.store.rateStore(id, parseInt($('input[name=rating]:checked').val()));">
+              onclick="globService.store.rateStore(id, parseInt($('input[name='rating']:checked').val()));">
         Rate!
       </button>
       </form>
-    </div>
+    </span>
     <div id="top-links" class="nav pull-right">
       <ul class="list-inline">
         <li><a href="<?php echo $contact; ?>"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md"><?php echo $telephone; ?></span></li>
