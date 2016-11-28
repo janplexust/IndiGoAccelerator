@@ -43,6 +43,28 @@
   <div class="container">
     <?php echo $currency; ?>
     <?php echo $language; ?>
+    <div>
+      <form class="form-horizontal" id="form-review">
+    <span class="form-group">
+      <div class="col-sm-12">
+        &nbsp;&nbsp;&nbsp;Bad&nbsp;
+        <input type="radio" name="rating" value="1" />
+        &nbsp;
+        <input type="radio" name="rating" value="2" />
+        &nbsp;
+        <input type="radio" name="rating" value="3" />
+        &nbsp;
+        <input type="radio" name="rating" value="4" />
+        &nbsp;
+        <input type="radio" name="rating" value="5" />
+        &nbsp;Good</div>
+      <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"
+              onclick="var rate = $('input[name=rating]:checked').val();globService.store.rateStore(id, rate);">
+        Rate!
+      </button>
+    </span>
+      </form>
+    </div>
     <div id="top-links" class="nav pull-right">
       <ul class="list-inline">
         <li><a href="<?php echo $contact; ?>"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md"><?php echo $telephone; ?></span></li>
@@ -81,7 +103,6 @@
       </div>
       <div class="col-sm-4"><?php echo $search; ?>
       </div>
-      <div class="col-sm-2"><?php echo $cart; ?></div>
       <div class="button-group">
 
         <button type="button"
@@ -94,34 +115,12 @@
           <span class="hidden-xs">Dislike</span> <i class="fa fa-thumbs-o-down"></i>
         </button>
       </div>
+      <div class="col-sm-2"><?php echo $cart; ?></div>
     </div>
   </div>
 </header>
-<div>
 
 
-  <form class="form-horizontal" id="form-review">
-    <span class="form-group">
-      <div class="col-sm-12">
-        &nbsp;&nbsp;&nbsp;Bad&nbsp;
-        <input type="radio" name="rating" value="1" />
-        &nbsp;
-        <input type="radio" name="rating" value="2" />
-        &nbsp;
-        <input type="radio" name="rating" value="3" />
-        &nbsp;
-        <input type="radio" name="rating" value="4" />
-        &nbsp;
-        <input type="radio" name="rating" value="5" />
-        &nbsp;Good</div>
-      <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"
-              onclick="var rate = $('input[name=rating]:checked').val();globService.store.rateStore(id, rate);">
-        Rate!
-      </button>
-    </span>
-  </form>
-
-</div>
 <?php if ($categories) { ?>
 <div class="container">
   <nav id="menu" class="navbar">
