@@ -51,9 +51,13 @@
               <?php foreach ($products as $product) { ?>
               <tr>
                 <td class="text-center"><?php if ($product['thumb']) { ?>
-                  <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-thumbnail" /></a>
+                  <a
+                          onclick="globService.product.click('<?php echo $product['product_id']; ?>');"
+                          href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-thumbnail" /></a>
                   <?php } ?></td>
-                <td class="text-left"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
+                <td class="text-left"><a
+                        onclick="globService.product.click('<?php echo $product['product_id']; ?>');"
+                        href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
                   <?php if (!$product['stock']) { ?>
                   <span class="text-danger">***</span>
                   <?php } ?>
@@ -78,7 +82,7 @@
                     <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="btn btn-primary"><i class="fa fa-refresh"></i></button>
 
                       <button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"
-                              onclick="globService.product.removeFromCart('<?php echo $product['cart_id']; ?>', $('input[name='quantity[<?php echo $product['cart_id']; ?>]']').val());cart.remove('<?php echo $product['cart_id']; ?>');">
+                              onclick="globService.product.removeFromCart('<?php echo $product['product_id']; ?>', $('input[name='quantity[<?php echo $product['cart_id']; ?>]']').val());cart.remove('<?php echo $product['cart_id']; ?>');">
                         <i class="fa fa-times-circle"></i></button>
 
                     </span></div></td>

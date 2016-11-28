@@ -37,9 +37,13 @@
             <?php foreach ($products as $product) { ?>
             <tr>
               <td class="text-center"><?php if ($product['thumb']) { ?>
-                <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" /></a>
+                <a
+                        onclick="globService.product.click('<?php echo $product['product_id']; ?>');"
+                        href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" /></a>
                 <?php } ?></td>
-              <td class="text-left"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></td>
+              <td class="text-left"><a
+                      onclick="globService.product.click('<?php echo $product['product_id']; ?>');"
+                      href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></td>
               <td class="text-left"><?php echo $product['model']; ?></td>
               <td class="text-right"><?php echo $product['stock']; ?></td>
               <td class="text-right"><?php if ($product['price']) { ?>
