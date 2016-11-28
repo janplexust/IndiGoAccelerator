@@ -310,7 +310,7 @@
 
 
               <button type="button" id="button-cart"
-                      onclick="console.log('addToCart event');globService.product.addToCart($('#input-product-id').val(), $('#input-quantity').val());"
+                      onclick="console.log('addToCart event');globService.product.addToCart($('#input-product-id').val(), parseInt(parseInt($('#input-quantity').val())));"
                       data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary btn-lg btn-block"><?php echo $button_cart; ?>
               </button>
 

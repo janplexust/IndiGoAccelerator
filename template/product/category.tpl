@@ -229,5 +229,6 @@
   var idStart = url.lastIndexOf('=') + 1;
   var id = url.substr(idStart);
   globService.category.view(id);
+  alert('<?php echo $_GET['path']; ?>')';
 </script>
 <?php echo $footer; ?>
