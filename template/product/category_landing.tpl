@@ -159,7 +159,7 @@
         <?php echo $column_right; ?></div>
 </div>
 <script>
-    console.log('init category page');
+    console.log('init category_landing page');
     globService.init('category_landing', {});
     var id = '<?php echo $_GET['path']; ?>';
     globService.category.view(id);
