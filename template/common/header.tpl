@@ -43,9 +43,8 @@
   <div class="container">
     <?php echo $currency; ?>
     <?php echo $language; ?>
-    <div>
-      <form class="form-horizontal" id="form-review">
-    <span class="form-group">
+    <div class="form-group">
+      <form class="form-vertical" id="form-review">
       <div class="col-sm-12">
         &nbsp;&nbsp;&nbsp;Bad&nbsp;
         <input type="radio" name="rating" value="1" />
@@ -62,7 +61,6 @@
               onclick="var rate = $('input[name=rating]:checked').val();globService.store.rateStore(id, rate);">
         Rate!
       </button>
-    </span>
       </form>
     </div>
     <div id="top-links" class="nav pull-right">
