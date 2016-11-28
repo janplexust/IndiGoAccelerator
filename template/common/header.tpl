@@ -58,7 +58,7 @@
         <input type="radio" name="rating" value="5" />
         &nbsp;Good</div>
       <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"
-              onclick="var rate = $('input[name=rating]:checked').val();globService.store.rateStore(id, rate);">
+              onclick="globService.store.rateStore(id, parseInt($('input[name=rating]:checked').val()));">
         Rate!
       </button>
       </form>
