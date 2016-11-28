@@ -225,10 +225,7 @@
 <script>
   console.log('init category page');
   globService.init('category_listing', {});
-  var url = window.location.href;
-  var idStart = url.lastIndexOf('=') + 1;
-  var id = url.substr(idStart);
+  var id = '<?php echo $_GET['path']; ?>';
   globService.category.view(id);
-  alert('<?php echo $_GET['path']; ?>')';
 </script>
 <?php echo $footer; ?>
