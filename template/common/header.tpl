@@ -61,6 +61,18 @@
                 type="radio" name="rating" value="5" />
         &nbsp;Good
       </span>
+    <span class="button-group">
+
+        <button type="button"
+                onclick="globService.store.likeStore();">
+          <span class="hidden-xs">Like</span> <i class="fa fa-thumbs-o-up"></i>
+        </button>
+
+        <button type="button"
+                onclick="globService.store.dislikeStore();">
+          <span class="hidden-xs">Dislike</span> <i class="fa fa-thumbs-o-down"></i>
+        </button>
+      </span>
     <div id="top-links" class="nav pull-right">
       <ul class="list-inline">
         <li><a href="<?php echo $contact; ?>"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md"><?php echo $telephone; ?></span></li>
@@ -99,18 +111,7 @@
       </div>
       <div class="col-sm-4"><?php echo $search; ?>
       </div>
-      <div class="button-group">
 
-        <button type="button"
-                onclick="globService.store.likeStore();">
-          <span class="hidden-xs">Like</span> <i class="fa fa-thumbs-o-up"></i>
-        </button>
-
-        <button type="button"
-                onclick="globService.store.dislikeStore();">
-          <span class="hidden-xs">Dislike</span> <i class="fa fa-thumbs-o-down"></i>
-        </button>
-      </div>
       <div class="col-sm-2"><?php echo $cart; ?></div>
     </div>
   </div>
