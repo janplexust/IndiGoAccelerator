@@ -43,7 +43,7 @@
           <div class="pull-right">
 
             <input type="submit" value="<?php echo $button_continue; ?>" class="btn btn-primary"
-                   onclick="if($('input[name=newsletter]:checked').val() == 0) globService.store.unsubscribeStore('message_type');"
+                   onclick="var subscr = true;if($('input[name=newsletter]:checked').val() == 0) subscr=false; globService.store.updateUser({'subscribe': subscr);"
             />
 
           </div>
@@ -53,6 +53,6 @@
     <?php echo $column_right; ?></div>
 </div>
 <script>
-    globService.init('static', {});
+    globService.init('profile_edit', {});
 </script>
 <?php echo $footer; ?>
