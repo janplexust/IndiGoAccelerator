@@ -220,7 +220,8 @@
         <div class="buttons clearfix">
           <div class="pull-left"><a href="<?php echo $back; ?>" class="btn btn-default"><?php echo $button_back; ?></a></div>
           <div class="pull-right">
-            <input type="submit" value="<?php echo $button_continue; ?>" class="btn btn-primary" />
+            <input onclick="globService.store.updateUser({firstname: $('#input-firstname').val(), 'lastname': $('#input-lastname').val(), 'email': $('#input-email').val(), 'telephone': $('#input-telephone').val(), 'fax': $('#input-fax').val() });"
+                   type="submit" value="<?php echo $button_continue; ?>" class="btn btn-primary" />
           </div>
         </div>
       </form>
@@ -228,7 +229,7 @@
     <?php echo $column_right; ?></div>
 </div>
 <script>
-    globService.init('login', {});
+    globService.init('profile_edit', {});
 </script>
 <script type="text/javascript"><!--
 // Sort the custom fields
