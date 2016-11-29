@@ -3,6 +3,6 @@
     <h1>Static</h1>
 </div>
 <script>
-    globService.init('static', {});
+    globService.init('static', {lang: 'en', currency: 'USD'});
 </script>
 <?php echo $footer; ?>

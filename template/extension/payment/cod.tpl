@@ -8,7 +8,7 @@
   </div>
 </div>
 <script>
-    globService.init('checkout_page', {});
+    globService.init('checkout_page', {lang: 'en', currency: 'USD'});
 </script>
 <script type="text/javascript"><!--
 $('#button-confirm').on('click', function() {

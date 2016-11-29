@@ -160,7 +160,7 @@
 </div>
 <script>
     console.log('init category_landing page');
-    globService.init('category_landing', {});
+    globService.init('category_landing', {lang: 'en', currency: 'USD'});
     var id = '<?php echo $_GET['path']; ?>';
     globService.category.view(id);
 </script>

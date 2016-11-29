@@ -146,6 +146,6 @@
     <?php echo $column_right; ?></div>
 </div>
 <script>
-    globService.init('product_compare', {});
+    globService.init('product_compare', {lang: 'en', currency: 'USD'});
 </script>
 <?php echo $footer; ?>

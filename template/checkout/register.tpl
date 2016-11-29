@@ -331,7 +331,7 @@
 <?php } ?>
 <script>
     console.log("Checkout register");
-    globService.init('register', {});
+    globService.init('register', {lang: 'en', currency: 'USD'});
 </script>
 <script type="text/javascript"><!--
 // Sort the custom fields

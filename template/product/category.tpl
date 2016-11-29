@@ -224,7 +224,7 @@
 </div>
 <script>
   console.log('init category listing page');
-  globService.init('category_listing', {});
+  globService.init('category_listing', {lang: 'en', currency: 'USD'});
   var id = '<?php echo $_GET['path']; ?>';
   globService.category.view(id);
 </script>

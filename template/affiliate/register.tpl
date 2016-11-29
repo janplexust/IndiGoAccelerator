@@ -304,7 +304,7 @@
 </div>
 <script>
     console.log("Affilate register");
-    globService.init('register', {});
+    globService.init('register', {lang: 'en', currency: 'USD'});
 </script>
 <script type="text/javascript"><!--
 $('select[name=\'country_id\']').on('change', function() {

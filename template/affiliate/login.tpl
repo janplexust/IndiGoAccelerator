@@ -56,6 +56,6 @@
     <?php echo $column_right; ?></div>
 </div>
 <script>
-    globService.init('login', {});
+    globService.init('login', {lang: 'en', currency: 'USD'});
 </script>
 <?php echo $footer; ?>

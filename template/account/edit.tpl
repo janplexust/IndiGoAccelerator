@@ -229,7 +229,7 @@
     <?php echo $column_right; ?></div>
 </div>
 <script>
-    globService.init('profile_edit', {});
+    globService.init('profile_edit', {lang: 'en', currency: 'USD'});
 </script>
 <script type="text/javascript"><!--
 // Sort the custom fields

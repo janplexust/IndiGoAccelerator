@@ -440,7 +440,7 @@
 </div>
 <script>
     console.log('init product page');
-    globService.init('product_detail', {});
+    globService.init('product_detail', {lang: 'en', currency: 'USD'});
     globService.product.view('<?php echo $product_id ?>');
 </script>
 <script type="text/javascript"><!--

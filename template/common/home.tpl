@@ -12,6 +12,6 @@
     <?php echo $column_right; ?></div>
 </div>
 <script>
-    globService.init('home', {});
+    globService.init('home', {lang: 'en', currency: 'USD'});
 </script>
 <?php echo $footer; ?>

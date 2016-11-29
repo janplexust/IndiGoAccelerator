@@ -53,6 +53,6 @@
     <?php echo $column_right; ?></div>
 </div>
 <script>
-    globService.init('profile_edit', {});
+    globService.init('profile_edit', {lang: 'en', currency: 'USD'});
 </script>
 <?php echo $footer; ?>

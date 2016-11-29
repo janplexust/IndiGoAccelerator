@@ -139,6 +139,6 @@
 </div>
 <script>
   console.log('init shopping cart page');
-  globService.init('shopping_cart', {});
+  globService.init('shopping_cart', {lang: 'en', currency: 'USD'});
 </script>
 <?php echo $footer; ?>

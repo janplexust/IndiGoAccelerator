@@ -176,6 +176,6 @@
     <?php echo $column_right; ?></div>
 </div>
 <script>
-    globService.init('order_information', {});
+    globService.init('order_information', {lang: 'en', currency: 'USD'});
 </script>
 <?php echo $footer; ?>

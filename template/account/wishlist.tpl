@@ -81,6 +81,6 @@
     <?php echo $column_right; ?></div>
 </div>
 <script>
-    globService.init('wish_list', {});
+    globService.init('wish_list', {lang: 'en', currency: 'USD'});
 </script>
 <?php echo $footer; ?>
