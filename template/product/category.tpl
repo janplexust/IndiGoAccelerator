@@ -68,6 +68,7 @@
 
       <?php if ($thumb || $description) { ?>
       <div class="row">
+        <div id="categories-banner" style="height: 400px;">Categories banner</div>
         <?php if ($thumb) { ?>
         <div class="col-sm-2"><img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>" title="<?php echo $heading_title; ?>" class="img-thumbnail" /></div>
         <?php } ?>
